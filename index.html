@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bloc 1 Vélora : BMC, CAPEX / OPEX et TJM | Business models et budgétisation</title>
-<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, ce que le changement de modèle change pour le budget, le tri CAPEX ou OPEX de 15 dépenses, puis coût journalier interne et TJM d'un freelance.">
+<title>Bloc 1 Vélora : BMC, CAPEX / OPEX, TJM et payback | Business models et budgétisation</title>
+<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, ce que le changement de modèle change pour le budget, le tri CAPEX ou OPEX de 15 dépenses, puis coût journalier, TJM et payback de la plateforme.">
 <meta name="robots" content="noindex">
 <style>
 :root{--dark:#2A2921;--bg:#F3F2EC;--cell:#E6E4DC;--white:#FDFDFB;--purple:#9B2FC0;--purple-l:#EEDCF5;--grey:#5A5A4C;--line:#D9D8CF;--green:#4ED585}
@@ -64,7 +64,7 @@ table.tri td:nth-child(2){font-weight:700;white-space:nowrap}
 .traps{background:var(--purple-l);padding:16px 20px;margin-top:20px}
 .traps h3{margin:0 0 8px;color:var(--purple);font-size:1.05rem}
 .traps ul{margin:0;padding-left:18px}.traps li{margin-bottom:6px}
-.calc{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.calc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .card{background:var(--white);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column}
 .card .n{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin:0 0 4px}
 .card h3{margin:0 0 8px;font-size:1.1rem}
@@ -98,7 +98,7 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
   <p class="kicker">Bloc 1 · Exercices 1, 2 et 3</p>
   <h1>Vélora Flex <span>même vélo, deux budgets</span></h1>
   <p>Vente en boutique → abonnement à 49 € HT par mois</p>
-  <nav class="toc"><a href="#ex1">Exercice 1 · Deux BMC</a><a href="#ex2">Exercice 2 · CAPEX ou OPEX</a><a href="#ex3">Exercice 3 · Coût journalier et TJM</a></nav>
+  <nav class="toc"><a href="#ex1">Exercice 1 · Deux BMC</a><a href="#ex2">Exercice 2 · CAPEX ou OPEX</a><a href="#ex3">Exercice 3 · TJM et payback</a></nav>
 </div></header>
 
 <main>
@@ -197,8 +197,8 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
 </div>
 <p class="concl">Pour le budget Vélora Flex : choisir l'option B (SaaS) ou louer la flotte fait basculer de gros montants du CAPEX vers l'OPEX. On paie moins au départ, mais plus chaque mois.</p>
 
-<p class="exk" id="ex3">Exercice 3 · Deux calculs sur Vélora</p>
-<h2>Coût journalier <em>et TJM</em></h2>
+<p class="exk" id="ex3">Exercice 3 · Trois calculs sur Vélora</p>
+<h2>TJM, coût journalier <em>et payback</em></h2>
 <div class="calc">
   <div class="card">
     <p class="n">Calcul 1</p>
@@ -223,6 +223,20 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
     </ul>
     <div class="res"><b>≈ 610 €</b>par jour, hors taxes</div>
     <p class="so">Il travaille autant qu'un salarié, mais ne facture que 140 jours : le reste part en prospection, gestion et congés. Et sur ses 85 000 €, il paie encore ses cotisations, ses outils et son assurance.</p>
+  </div>
+  <div class="card">
+    <p class="n">Calcul 3</p>
+    <h3>Payback de la plateforme</h3>
+    <p class="q">Option A : sur mesure, avec 15 % de maintenance annuelle. Option B : SaaS, au régime de croisière de 1 200 abonnés. En combien de mois le sur mesure est-il rentabilisé ?</p>
+    <ul class="steps">
+      <li>A, construction : 120 j × 650 € = <b>78 000 €</b></li>
+      <li>A, maintenance : 78 000 € × 15 % ÷ 12 = <b>975 € par mois</b></li>
+      <li>B : 1 500 € + 2 % × (1 200 × 49 €) = <b>2 676 € par mois</b></li>
+      <li>Gain net de A : 2 676 € − 975 € = <b>1 701 € par mois</b></li>
+      <li>Payback = investissement ÷ gain net : 78 000 € ÷ 1 701 € = <b>45,9 mois</b></li>
+    </ul>
+    <div class="res"><b>46 mois</b>pour rentabiliser le sur mesure</div>
+    <p class="so">Près de 4 ans : bien au-delà des 18 mois du projet. Et c'est un minimum, car avant d'atteindre 1 200 abonnés, le SaaS coûte moins cher et le gain est plus faible.</p>
   </div>
 </div>
 

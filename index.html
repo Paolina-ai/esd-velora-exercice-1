@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Exercice 1 : deux BMC de Vélora | Business models et budgétisation</title>
-<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, et ce que le changement de modèle change pour le budget.">
+<title>Bloc 1 Vélora : BMC et tri CAPEX / OPEX | Business models et budgétisation</title>
+<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, ce que le changement de modèle change pour le budget, puis le tri CAPEX ou OPEX de 15 dépenses du projet.">
 <meta name="robots" content="noindex">
 <style>
 :root{--dark:#2A2921;--bg:#F3F2EC;--cell:#E6E4DC;--white:#FDFDFB;--purple:#9B2FC0;--purple-l:#EEDCF5;--grey:#5A5A4C;--line:#D9D8CF;--green:#4ED585}
@@ -48,8 +48,31 @@ td:last-child{color:var(--purple);font-weight:700}
 .stat:first-child{background:var(--purple);border-color:var(--purple);color:var(--white)}
 .stat:first-child b{color:var(--white)}
 .concl{font-size:1.15rem;font-weight:700;margin:24px 0 0}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.toc a{color:var(--white);border:1px solid #7E7E78;border-radius:99px;padding:6px 14px;text-decoration:none;font-size:.9rem}
+.toc a:hover{border-color:#C98BE0;color:#C98BE0}
+.exk{margin:56px 0 -36px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;color:var(--purple);scroll-margin-top:16px}
+.rule{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 20px}
+.rule div{background:var(--white);border:1px solid var(--line);padding:14px 16px}
+.rule b{display:block;margin-bottom:4px}
+.v{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;border-radius:99px;padding:2px 10px;white-space:nowrap;color:var(--white)}
+.v.capex{background:var(--purple)}.v.opex{background:var(--dark)}.v.cond{background:var(--white);color:var(--purple);border:1.5px solid var(--purple)}
+table.tri td:last-child{color:var(--dark);font-weight:400}
+table.tri td:first-child{width:36px;color:var(--grey)}
+table.tri td:nth-child(2){font-weight:700;white-space:nowrap}
+.count{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.traps{background:var(--purple-l);padding:16px 20px;margin-top:20px}
+.traps h3{margin:0 0 8px;color:var(--purple);font-size:1.05rem}
+.traps ul{margin:0;padding-left:18px}.traps li{margin-bottom:6px}
 footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
 @media (max-width:760px){
+  .rule,.count{grid-template-columns:1fr}
+  table.tri{min-width:0;background:none}
+  table.tri thead{display:none}
+  table.tri tr{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;background:var(--white);border:1px solid var(--line);padding:12px;margin-bottom:8px}
+  table.tri td{border:0;padding:0;width:auto!important;white-space:normal!important}
+  table.tri td:nth-child(3),table.tri td:nth-child(4){grid-column:1 / -1}
+  .exk{margin-bottom:-36px}
   .bmc{grid-template-columns:1fr;grid-template-areas:"pv" "se" "re" "ca" "ac" "rs" "pa" "co" "rv"}
   .stats{grid-template-columns:1fr}
 }
@@ -57,12 +80,14 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
 </head>
 <body>
 <header class="hero"><div class="in">
-  <p class="kicker">Bloc 1 · Exercice 1</p>
-  <h1>Deux BMC de Vélora <span>même vélo, deux budgets</span></h1>
-  <p>Vente en boutique → abonnement Vélora Flex à 49 € HT par mois</p>
+  <p class="kicker">Bloc 1 · Exercices 1 et 2</p>
+  <h1>Vélora Flex <span>même vélo, deux budgets</span></h1>
+  <p>Vente en boutique → abonnement à 49 € HT par mois</p>
+  <nav class="toc"><a href="#ex1">Exercice 1 · Deux BMC</a><a href="#ex2">Exercice 2 · CAPEX ou OPEX</a></nav>
 </div></header>
 
 <main>
+<p class="exk" id="ex1">Exercice 1 · Deux BMC de Vélora</p>
 <h2>BMC 1 · Vélora, <em>la vente en boutique</em></h2>
 <p class="lead">Le modèle actuel : 6 boutiques, 45 salariés, 7 M€ de chiffre d'affaires.</p>
 <div class="bmc">
@@ -114,6 +139,48 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
   <div class="stat"><b>25 mois</b>de durée de vie moyenne d'un abonné à 4 % de churn ; à 6 %, elle tombe à 16,7 mois</div>
 </div>
 <p class="concl">En boutique, Vélora gagne de l'argent à chaque vente. Avec Flex, elle avance l'argent du vélo et le récupère abonné par abonné : le budget se pilote au churn et au coût d'acquisition.</p>
+
+<p class="exk" id="ex2">Exercice 2 · CAPEX ou OPEX ?</p>
+<h2>15 dépenses, <em>une question : investir ou consommer ?</em></h2>
+<div class="rule">
+  <div><b>CAPEX · on investit</b>On achète ou crée un actif que l'on contrôle et que l'on utilise plus d'un an. Son coût est étalé par l'amortissement.</div>
+  <div><b>OPEX · on consomme</b>On paie un service ou une ressource utilisés sur la période. Le coût pèse entièrement sur la période.</div>
+</div>
+<div class="tw"><table class="tri">
+  <thead><tr><th>#</th><th>Dépense</th><th>Verdict</th><th>Justification</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Licence SaaS d'un CRM</td><td><span class="v opex">OPEX</span></td><td>On paie un droit d'usage mensuel : Vélora ne possède ni ne contrôle le logiciel, rien ne reste à l'actif.</td></tr>
+    <tr><td>2</td><td>Achat de la flotte de vélos</td><td><span class="v capex">CAPEX</span></td><td>Actif durable utilisé 3 ans : 600 € par vélo, amortis à 16,67 € par mois. En location, ce serait de l'OPEX.</td></tr>
+    <tr><td>3</td><td>Campagne Google Ads</td><td><span class="v opex">OPEX</span></td><td>Achat d'espace consommé pendant la campagne, sans actif durable.</td></tr>
+    <tr><td>4</td><td>Formation des équipes</td><td><span class="v opex">OPEX</span></td><td>Le savoir-faire appartient aux salariés, pas à l'entreprise : une formation n'est jamais incorporée au coût d'un actif.</td></tr>
+    <tr><td>5</td><td>Développement sur mesure du site</td><td><span class="v cond">CAPEX sous conditions</span></td><td>Immobilisable en phase de développement si le projet est faisable, que Vélora a l'intention et les moyens de l'achever, et qu'il générera des avantages futurs (PCG 212-3). La phase de conception amont reste en OPEX.</td></tr>
+    <tr><td>6</td><td>Freelance sur ce développement</td><td><span class="v cond">CAPEX sous conditions</span></td><td>Suit le sort du développement : un coût directement attribuable à l'actif est immobilisé avec lui. Si le site n'est pas activé, c'est de l'OPEX.</td></tr>
+    <tr><td>7</td><td>Serveur acheté</td><td><span class="v capex">CAPEX</span></td><td>Matériel possédé, utilisé plusieurs années et amorti.</td></tr>
+    <tr><td>8</td><td>Hébergement cloud</td><td><span class="v opex">OPEX</span></td><td>Service consommé au mois, facturé à l'usage : on loue de la capacité, on ne l'achète pas.</td></tr>
+    <tr><td>9</td><td>Abonnement à un outil d'emailing</td><td><span class="v opex">OPEX</span></td><td>Même logique que le CRM : un abonnement est une consommation de la période.</td></tr>
+    <tr><td>10</td><td>Ordinateurs de l'équipe</td><td><span class="v capex">CAPEX</span></td><td>Matériel durable amorti sur environ 3 ans. Nuance : sous 500 € HT par unité, la tolérance fiscale permet de le passer en charge.</td></tr>
+    <tr><td>11</td><td>Honoraires d'une agence créative</td><td><span class="v opex">OPEX</span></td><td>Prestation de communication consommée (campagnes, visuels). Seule exception : si l'agence développe le site immobilisé, ses honoraires suivent le CAPEX.</td></tr>
+    <tr><td>12</td><td>Maintenance annuelle de la plateforme</td><td><span class="v opex">OPEX</span></td><td>Elle maintient la plateforme en état sans l'améliorer : charge de la période. Une évolution majeure qui ajoute des fonctions serait du CAPEX.</td></tr>
+    <tr><td>13</td><td>Aménagement d'un atelier</td><td><span class="v capex">CAPEX</span></td><td>Agencement durable qui sert plusieurs années : immobilisé et amorti sur sa durée d'usage, au plus sur la durée du bail.</td></tr>
+    <tr><td>14</td><td>Assurance de la flotte</td><td><span class="v opex">OPEX</span></td><td>Prime payée pour une couverture sur la période : l'actif, c'est le vélo, pas son assurance.</td></tr>
+    <tr><td>15</td><td>Dépôt de la marque Vélora Flex</td><td><span class="v opex">OPEX</span></td><td>Piège : une marque créée en interne ne peut pas être immobilisée (PCG 212-3), donc ses frais de dépôt INPI passent en charge. Une marque achetée, elle, serait du CAPEX.</td></tr>
+  </tbody>
+</table></div>
+<div class="count">
+  <div class="stat"><b>4</b>CAPEX sans discussion : flotte, serveur, ordinateurs, atelier</div>
+  <div class="stat"><b>2</b>CAPEX sous conditions : le développement sur mesure et le freelance qui y travaille</div>
+  <div class="stat"><b>9</b>OPEX : abonnements, média, prestations, formation, maintenance, assurance, marque</div>
+</div>
+<div class="traps">
+  <h3>Les 4 pièges du tri</h3>
+  <ul>
+    <li><b>La nature compte plus que le fournisseur :</b> le même freelance est en CAPEX s'il construit le site immobilisé, en OPEX s'il fait de la maintenance.</li>
+    <li><b>Abonnement = OPEX,</b> même pour un logiciel central comme le CRM : on ne possède rien.</li>
+    <li><b>Formation et marque créée en interne ne s'immobilisent jamais,</b> même si elles servent des années.</li>
+    <li><b>Maintenir ≠ améliorer :</b> la maintenance est de l'OPEX, une évolution qui ajoute des fonctions peut être du CAPEX.</li>
+  </ul>
+</div>
+<p class="concl">Pour le budget Vélora Flex : choisir l'option B (SaaS) ou louer la flotte fait basculer de gros montants du CAPEX vers l'OPEX. On paie moins au départ, mais plus chaque mois.</p>
 
 <footer>Business models et budgétisation · M2 · ESD Paris · cas fictif Vélora Flex, tous les chiffres sont des hypothèses pédagogiques du cours.</footer>
 </main>

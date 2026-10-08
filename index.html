@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bloc 1 Vélora : BMC, CAPEX / OPEX, TJM et payback | Business models et budgétisation</title>
-<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, ce que le changement de modèle change pour le budget, le tri CAPEX ou OPEX de 15 dépenses, puis coût journalier, TJM et payback de la plateforme.">
+<title>Bloc 1 Vélora : BMC, CAPEX / OPEX et TJM | Business models et budgétisation</title>
+<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, ce que le changement de modèle change pour le budget, le tri CAPEX ou OPEX de 15 dépenses, puis coût journalier interne et TJM d'un freelance.">
 <meta name="robots" content="noindex">
 <style>
 :root{--dark:#2A2921;--bg:#F3F2EC;--cell:#E6E4DC;--white:#FDFDFB;--purple:#9B2FC0;--purple-l:#EEDCF5;--grey:#5A5A4C;--line:#D9D8CF;--green:#4ED585}
@@ -64,7 +64,7 @@ table.tri td:nth-child(2){font-weight:700;white-space:nowrap}
 .traps{background:var(--purple-l);padding:16px 20px;margin-top:20px}
 .traps h3{margin:0 0 8px;color:var(--purple);font-size:1.05rem}
 .traps ul{margin:0;padding-left:18px}.traps li{margin-bottom:6px}
-.calc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.calc{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .card{background:var(--white);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column}
 .card .n{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin:0 0 4px}
 .card h3{margin:0 0 8px;font-size:1.1rem}
@@ -98,7 +98,7 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
   <p class="kicker">Bloc 1 · Exercices 1, 2 et 3</p>
   <h1>Vélora Flex <span>même vélo, deux budgets</span></h1>
   <p>Vente en boutique → abonnement à 49 € HT par mois</p>
-  <nav class="toc"><a href="#ex1">Exercice 1 · Deux BMC</a><a href="#ex2">Exercice 2 · CAPEX ou OPEX</a><a href="#ex3">Exercice 3 · TJM et payback</a></nav>
+  <nav class="toc"><a href="#ex1">Exercice 1 · Deux BMC</a><a href="#ex2">Exercice 2 · CAPEX ou OPEX</a><a href="#ex3">Exercice 3 · Coût journalier et TJM</a></nav>
 </div></header>
 
 <main>
@@ -197,8 +197,8 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
 </div>
 <p class="concl">Pour le budget Vélora Flex : choisir l'option B (SaaS) ou louer la flotte fait basculer de gros montants du CAPEX vers l'OPEX. On paie moins au départ, mais plus chaque mois.</p>
 
-<p class="exk" id="ex3">Exercice 3 · Trois calculs sur Vélora</p>
-<h2>TJM, coût journalier <em>et payback</em></h2>
+<p class="exk" id="ex3">Exercice 3 · Deux calculs sur Vélora</p>
+<h2>Coût journalier <em>et TJM</em></h2>
 <div class="calc">
   <div class="card">
     <p class="n">Calcul 1</p>
@@ -224,32 +224,7 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
     <div class="res"><b>≈ 610 €</b>par jour, hors taxes</div>
     <p class="so">Il travaille autant qu'un salarié, mais ne facture que 140 jours : le reste part en prospection, gestion et congés. Et sur ses 85 000 €, il paie encore ses cotisations, ses outils et son assurance.</p>
   </div>
-  <div class="card">
-    <p class="n">Calcul 3</p>
-    <h3>Payback de la plateforme</h3>
-    <p class="q">Option A sur mesure, 15 % de maintenance par an. Option B SaaS, à 1 200 abonnés.</p>
-    <ul class="steps">
-      <li>A, construction : 120 j × 650 € = <b>78 000 €</b></li>
-      <li>A, maintenance : 78 000 € × 15 % ÷ 12 = <b>975 € par mois</b></li>
-      <li>B : 1 500 € + 2 % × (1 200 × 49 €) = <b>2 676 € par mois</b></li>
-      <li>Économie de A : 2 676 € − 975 € = <b>1 701 € par mois</b></li>
-      <li>Payback : 78 000 € ÷ 1 701 € = <b>45,9 mois</b></li>
-    </ul>
-    <div class="res"><b>46 mois</b>pour rentabiliser le sur mesure</div>
-    <p class="so">C'est un minimum : avant d'atteindre 1 200 abonnés, le SaaS coûte encore moins cher et l'économie est plus faible.</p>
-  </div>
 </div>
-<div class="tw"><table class="cmp">
-  <thead><tr><th>Pour décider</th><th>Option A · sur mesure</th><th>Option B · SaaS</th><th>Verdict</th></tr></thead>
-  <tbody>
-    <tr><td>Payback vs horizon du projet</td><td>46 mois</td><td>Rien à rentabiliser</td><td>46 mois > 18 mois du projet</td></tr>
-    <tr><td>TCO sur 3 ans</td><td>78 000 € + 36 × 975 € = 113 100 €</td><td>36 × 2 676 € = 96 336 €</td><td>B moins cher de 16 764 €</td></tr>
-    <tr><td>Trésorerie au lancement</td><td>78 000 € à payer avant le mois 4</td><td>1 500 € par mois au démarrage</td><td>B préserve l'enveloppe</td></tr>
-    <tr><td>Seuil où A devient rentable sur 3 ans</td><td colspan="2">1 500 € + 0,98 € × N = 78 000 € ÷ 36 + 975 €, soit N ≈ 1 675 abonnés</td><td>Au-delà de 1 675 abonnés</td></tr>
-  </tbody>
-</table></div>
-<p class="concl">Recommandation : lancer Vélora Flex sur le SaaS (option B). Le sur mesure ne devient intéressant qu'au-delà d'environ 1 675 abonnés sur 3 ans. On le rouvrira si la croissance dépasse le plan.</p>
-<p class="legend">Hypothèses : 2 % calculés sur le chiffre d'affaires HT (49 € par abonné, soit 0,98 € par abonné et par mois), sans actualisation. Coûts de sortie non chiffrés. Avec l'estimation à trois points du cours (125 jours, 81 250 €), le payback passe à 49 mois (maintenance recalculée sur 81 250 €).</p>
 
 <footer>Business models et budgétisation · M2 · ESD Paris · cas fictif Vélora Flex, tous les chiffres sont des hypothèses pédagogiques du cours.</footer>
 </main>

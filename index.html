@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercice 1 : deux BMC de Vélora | Business models et budgétisation</title>
+<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, et ce que le changement de modèle change pour le budget.">
+<meta name="robots" content="noindex">
+<style>
+:root{--dark:#2A2921;--bg:#F3F2EC;--cell:#E6E4DC;--white:#FDFDFB;--purple:#9B2FC0;--purple-l:#EEDCF5;--grey:#5A5A4C;--line:#D9D8CF;--green:#4ED585}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--dark);font:16px/1.5 "Work Sans",Arial,sans-serif}
+main{max-width:1040px;margin:0 auto;padding:0 16px 48px}
+header.hero{background:var(--dark);color:var(--white);padding:56px 16px 48px}
+.hero .in{max-width:1040px;margin:0 auto}
+.kicker{color:var(--green);font-weight:700;letter-spacing:.12em;font-size:.8rem;text-transform:uppercase;margin:0 0 12px}
+h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0 0 16px}
+h1 span{color:#C98BE0;display:block}
+.hero p{color:#D9D8CF;margin:0;font-size:1.1rem}
+h2{font-size:1.5rem;margin:48px 0 8px;border:1px solid var(--dark);border-top:6px solid var(--dark);background:var(--white);padding:10px 16px}
+h2 em{font-style:normal;color:var(--purple)}
+.lead{color:var(--grey);margin:0 0 16px}
+.bmc{display:grid;gap:5px;grid-template-columns:repeat(5,1fr);grid-template-areas:"pa ac pv re se" "pa rs pv ca se" "co co co rv rv"}
+.c{background:var(--cell);padding:10px 12px;font-size:.88rem;position:relative}
+.c h3{margin:0 0 6px;font-size:.95rem}
+.c ul{margin:0;padding-left:16px}
+.c li{margin-bottom:3px}
+.pa{grid-area:pa}.ac{grid-area:ac}.rs{grid-area:rs}.pv{grid-area:pv}.re{grid-area:re}.ca{grid-area:ca}.se{grid-area:se}
+.co{grid-area:co;background:var(--dark);color:var(--white)}
+.rv{grid-area:rv;background:var(--purple);color:var(--white)}
+.chg{background:var(--purple-l)}.chg h3{color:var(--purple)}
+.co.chg{background:var(--dark)}.co.chg h3{color:var(--white)}
+.rv.chg{background:var(--purple)}.rv.chg h3{color:var(--white)}
+.tag{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.05em;color:var(--white);background:var(--purple);border-radius:99px;padding:1px 8px;margin-left:6px;vertical-align:middle}
+.co .tag{background:var(--purple)}.rv .tag{background:var(--dark)}
+.tag.p{background:var(--grey)}
+.legend{font-size:.85rem;color:var(--grey);margin-top:8px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--white);font-size:.9rem;min-width:640px}
+th{background:var(--dark);color:var(--white);text-align:left;padding:8px 10px}
+td{border:1px solid var(--line);padding:8px 10px;vertical-align:top}
+td:first-child{font-weight:700}
+td:last-child{color:var(--purple);font-weight:700}
+.note{font-weight:700;font-size:1.05rem;margin:16px 0 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat{background:var(--white);border:1px solid var(--line);padding:20px}
+.stat b{display:block;font-size:2.2rem;color:var(--purple);line-height:1.1;margin-bottom:8px}
+.stat:first-child{background:var(--purple);border-color:var(--purple);color:var(--white)}
+.stat:first-child b{color:var(--white)}
+.concl{font-size:1.15rem;font-weight:700;margin:24px 0 0}
+footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
+@media (max-width:760px){
+  .bmc{grid-template-columns:1fr;grid-template-areas:"pv" "se" "re" "ca" "ac" "rs" "pa" "co" "rv"}
+  .stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="hero"><div class="in">
+  <p class="kicker">Bloc 1 · Exercice 1</p>
+  <h1>Deux BMC de Vélora <span>même vélo, deux budgets</span></h1>
+  <p>Vente en boutique → abonnement Vélora Flex à 49 € HT par mois</p>
+</div></header>
+
+<main>
+<h2>BMC 1 · Vélora, <em>la vente en boutique</em></h2>
+<p class="lead">Le modèle actuel : 6 boutiques, 45 salariés, 7 M€ de chiffre d'affaires.</p>
+<div class="bmc">
+  <div class="c pa"><h3>Partenaires clés</h3><ul><li>Fournisseurs de vélos d'occasion (rachats, reprises, flottes)</li><li>Fournisseurs de pièces et batteries</li><li>Bailleurs des 6 boutiques</li><li>Organismes de crédit (paiement en plusieurs fois)</li></ul></div>
+  <div class="c ac"><h3>Activités clés</h3><ul><li>Racheter et reconditionner les vélos</li><li>Vendre et conseiller en boutique</li><li>Réparer (SAV payant)</li></ul></div>
+  <div class="c rs"><h3>Ressources clés</h3><ul><li>6 boutiques et ateliers</li><li>45 salariés : vendeurs, techniciens</li><li>Stock de vélos</li><li>Savoir-faire reconditionnement</li></ul></div>
+  <div class="c pv"><h3>Proposition de valeur</h3><ul><li>Un vélo électrique de qualité moins cher que le neuf</li><li>Reconditionné et garanti</li><li>Choix écoresponsable</li><li>Essai et conseil sur place</li></ul></div>
+  <div class="c re"><h3>Relations clients</h3><ul><li>Conseil en face à face</li><li>Relation ponctuelle : un achat, puis le SAV</li></ul></div>
+  <div class="c ca"><h3>Canaux</h3><ul><li>6 boutiques à Lyon et alentours</li><li>Bouche-à-oreille, site vitrine, réseaux sociaux</li></ul></div>
+  <div class="c se"><h3>Segments clients</h3><ul><li>Particuliers lyonnais qui veulent un vélo électrique</li><li>Sensibles au prix et à l'écologie</li><li>Capables de payer le vélo en une fois</li></ul></div>
+  <div class="c co"><h3>Structure de coûts</h3><ul><li>Coût dominant : achat + reconditionnement (600 € de coût de revient par vélo)</li><li>Loyers des boutiques, 45 salaires, stock immobilisé (risque d'invendus)</li></ul></div>
+  <div class="c rv"><h3>Flux de revenus</h3><ul><li>Vente du vélo : encaissée en une fois, à l'achat</li><li>Accessoires, réparations, extensions de garantie</li><li>Indicateur clé : marge par vélo vendu</li></ul></div>
+</div>
+
+<h2>BMC 2 · Vélora Flex, <em>l'abonnement</em></h2>
+<p class="lead">8 cases sur 9 changent. Le vélo ne change pas : ce qui change, c'est qu'il reste la propriété de Vélora.</p>
+<div class="bmc">
+  <div class="c pa chg"><h3>Partenaires clés <span class="tag">CHANGE</span></h3><ul><li>Assureur (vol inclus dans l'offre)</li><li>Agence web (option A) ou éditeur SaaS (option B)</li><li>Prestataire de paiement récurrent</li><li>Google Ads, Meta : acquisition payante</li><li>Fournisseurs de vélos (inchangé)</li></ul></div>
+  <div class="c ac chg"><h3>Activités clés <span class="tag">CHANGE</span></h3><ul><li>Gérer une flotte : livrer, récupérer, réattribuer</li><li>Acquérir en ligne, puis retenir (churn)</li><li>Entretien inclus, gestion des vols</li></ul></div>
+  <div class="c rs chg"><h3>Ressources clés <span class="tag">CHANGE</span></h3><ul><li>Flotte détenue par Vélora</li><li>Plateforme d'abonnement en ligne</li><li>Équipe : chef de projet, marketing, 2 techniciens</li><li>Boutiques = points de retrait</li></ul></div>
+  <div class="c pv chg"><h3>Proposition de valeur <span class="tag">CHANGE</span></h3><ul><li>Un vélo électrique sans l'acheter</li><li>49 € HT par mois tout compris : vélo, entretien, assurance vol</li><li>Pas de grosse dépense au départ</li><li>Résiliable</li></ul></div>
+  <div class="c re chg"><h3>Relations clients <span class="tag">CHANGE</span></h3><ul><li>Relation continue, mois après mois</li><li>Espace client en ligne</li><li>Enjeu : garder l'abonné (churn 4 %)</li></ul></div>
+  <div class="c ca chg"><h3>Canaux <span class="tag">CHANGE</span></h3><ul><li>Vente 100 % en ligne</li><li>Pub payante : CPC 1,10 €, conversion 1,2 %</li><li>Boutiques : remise et entretien</li></ul></div>
+  <div class="c se"><h3>Segments clients <span class="tag p">PARTIEL</span></h3><ul><li>Actifs urbains qui ne veulent pas immobiliser l'argent d'un achat</li><li>Ceux qui veulent tester avant d'acheter</li><li>Clientèle plus digitale que celle des boutiques</li></ul></div>
+  <div class="c co chg"><h3>Structure de coûts <span class="tag">CHANGE</span></h3><ul><li>Flotte achetée au départ (600 € par vélo, amortie sur 36 mois), acquisition (CAC ≈ 92 €)</li><li>Entretien + assurance : 9 € par abonné et par mois · plateforme · équipe projet · vols et casse</li></ul></div>
+  <div class="c rv chg"><h3>Flux de revenus <span class="tag">CHANGE</span></h3><ul><li>Revenu récurrent : 49 € HT par mois tant que l'abonné reste</li><li>Objectif : 1 200 abonnés au mois 18, soit 58 800 € HT par mois</li><li>Indicateurs : churn, revenu mensuel récurrent, valeur vie client</li></ul></div>
+</div>
+<p class="legend">Violet = case qui change fortement · PARTIEL = segment élargi, pas remplacé.</p>
+
+<h2>Ce que ça change <em>pour le budget</em></h2>
+<div class="tw"><table>
+  <thead><tr><th>Case qui change</th><th>Conséquence budgétaire</th><th>Nature de la ligne</th><th>Ordre de grandeur</th></tr></thead>
+  <tbody>
+    <tr><td>Ressources : la flotte</td><td>Les vélos ne sont plus vendus mais gardés : on les paie avant d'encaisser</td><td>CAPEX · variable (par vélo)</td><td>1 200 × 600 € = 720 k€, 65 % de l'enveloppe</td></tr>
+    <tr><td>Flux de revenus</td><td>Revenu étalé : creux de trésorerie au démarrage</td><td>Recette récurrente</td><td>1 200 × 49 € = 58 800 € HT par mois au mois 18</td></tr>
+    <tr><td>Canaux : vente en ligne</td><td>Nouvelle ligne média : on paie pour chaque abonné</td><td>OPEX · variable</td><td>CAC = 1,10 € ÷ 1,2 % ≈ 92 € par abonné</td></tr>
+    <tr><td>Ressources : plateforme</td><td>Choix sur mesure ou SaaS</td><td>A : CAPEX fixe · B : OPEX semi-variable</td><td>A : 78 k€ · B : 1 500 € par mois + 2 % du CA</td></tr>
+    <tr><td>Activités : entretien, assurance</td><td>Ce qui était un revenu (SAV) devient un coût inclus</td><td>OPEX · variable</td><td>9 € par abonné et par mois</td></tr>
+    <tr><td>Ressources : équipe projet</td><td>Nouveaux salaires chargés (coefficient 1,45)</td><td>OPEX · fixe, par paliers</td><td>≈ 16 200 € par mois de coûts fixes, maintenance comprise</td></tr>
+    <tr><td>Relations : rétention</td><td>Le churn devient le premier risque, avec les vols</td><td>Provision pour risques</td><td>Durée de vie : 1 ÷ 4 % = 25 mois</td></tr>
+  </tbody>
+</table></div>
+<p class="note">Point mort : 405 abonnés sans compter le vélo, 694 en comptant son amortissement (16,67 € par mois).</p>
+
+<h2>Une vente devient <em>un investissement</em></h2>
+<div class="stats">
+  <div class="stat"><b>720 k€</b>pour la flotte de 1 200 vélos, payée avant d'être rentabilisée</div>
+  <div class="stat"><b>≈ 4 mois</b>pour rembourser le CAC de 92 € : 49 € − 9 € − 16,67 € d'amortissement = 23,33 € de marge par mois</div>
+  <div class="stat"><b>25 mois</b>de durée de vie moyenne d'un abonné à 4 % de churn ; à 6 %, elle tombe à 16,7 mois</div>
+</div>
+<p class="concl">En boutique, Vélora gagne de l'argent à chaque vente. Avec Flex, elle avance l'argent du vélo et le récupère abonné par abonné : le budget se pilote au churn et au coût d'acquisition.</p>
+
+<footer>Business models et budgétisation · M2 · ESD Paris · cas fictif Vélora Flex, tous les chiffres sont des hypothèses pédagogiques du cours.</footer>
+</main>
+</body>
+</html>

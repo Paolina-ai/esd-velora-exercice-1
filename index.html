@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bloc 1 Vélora : BMC et tri CAPEX / OPEX | Business models et budgétisation</title>
-<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, ce que le changement de modèle change pour le budget, puis le tri CAPEX ou OPEX de 15 dépenses du projet.">
+<title>Bloc 1 Vélora : BMC, CAPEX / OPEX, TJM et payback | Business models et budgétisation</title>
+<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, ce que le changement de modèle change pour le budget, le tri CAPEX ou OPEX de 15 dépenses, puis coût journalier, TJM et payback de la plateforme.">
 <meta name="robots" content="noindex">
 <style>
 :root{--dark:#2A2921;--bg:#F3F2EC;--cell:#E6E4DC;--white:#FDFDFB;--purple:#9B2FC0;--purple-l:#EEDCF5;--grey:#5A5A4C;--line:#D9D8CF;--green:#4ED585}
@@ -64,9 +64,24 @@ table.tri td:nth-child(2){font-weight:700;white-space:nowrap}
 .traps{background:var(--purple-l);padding:16px 20px;margin-top:20px}
 .traps h3{margin:0 0 8px;color:var(--purple);font-size:1.05rem}
 .traps ul{margin:0;padding-left:18px}.traps li{margin-bottom:6px}
+.calc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--white);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column}
+.card .n{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin:0 0 4px}
+.card h3{margin:0 0 8px;font-size:1.1rem}
+.card .q{color:var(--grey);font-size:.88rem;margin:0 0 12px}
+.steps{list-style:none;padding:0;margin:0 0 12px;font-size:.9rem}
+.steps li{padding:6px 0;border-top:1px dashed var(--line);font-variant-numeric:tabular-nums}
+.res{background:var(--purple);color:var(--white);padding:12px 14px;margin:auto 0 12px}
+.res b{display:block;font-size:1.9rem;line-height:1.1}
+.card .so{font-size:.9rem;margin:0}
+.cmp{width:100%;min-width:0;margin:20px 0 0}
+.cmp td:first-child{font-weight:700}
+.cmp td:last-child{color:var(--purple);font-weight:700}
 footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
 @media (max-width:760px){
-  .rule,.count{grid-template-columns:1fr}
+  .rule,.count,.calc{grid-template-columns:1fr}
+  table.cmp{font-size:.78rem}
+  table.cmp td,table.cmp th{padding:6px}
   table.tri{min-width:0;background:none}
   table.tri thead{display:none}
   table.tri tr{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;background:var(--white);border:1px solid var(--line);padding:12px;margin-bottom:8px}
@@ -80,16 +95,16 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
 </head>
 <body>
 <header class="hero"><div class="in">
-  <p class="kicker">Bloc 1 · Exercices 1 et 2</p>
+  <p class="kicker">Bloc 1 · Exercices 1, 2 et 3</p>
   <h1>Vélora Flex <span>même vélo, deux budgets</span></h1>
-  <p>Vente en boutique → abonnement à 49 € HT par mois</p>
-  <nav class="toc"><a href="#ex1">Exercice 1 · Deux BMC</a><a href="#ex2">Exercice 2 · CAPEX ou OPEX</a></nav>
+  <p>Vente en boutique → abonnement à 49 € HT par mois</p>
+  <nav class="toc"><a href="#ex1">Exercice 1 · Deux BMC</a><a href="#ex2">Exercice 2 · CAPEX ou OPEX</a><a href="#ex3">Exercice 3 · TJM et payback</a></nav>
 </div></header>
 
 <main>
 <p class="exk" id="ex1">Exercice 1 · Deux BMC de Vélora</p>
 <h2>BMC 1 · Vélora, <em>la vente en boutique</em></h2>
-<p class="lead">Le modèle actuel : 6 boutiques, 45 salariés, 7 M€ de chiffre d'affaires.</p>
+<p class="lead">Le modèle actuel : 6 boutiques, 45 salariés, 7 M€ de chiffre d'affaires.</p>
 <div class="bmc">
   <div class="c pa"><h3>Partenaires clés</h3><ul><li>Fournisseurs de vélos d'occasion (rachats, reprises, flottes)</li><li>Fournisseurs de pièces et batteries</li><li>Bailleurs des 6 boutiques</li><li>Organismes de crédit (paiement en plusieurs fois)</li></ul></div>
   <div class="c ac"><h3>Activités clés</h3><ul><li>Racheter et reconditionner les vélos</li><li>Vendre et conseiller en boutique</li><li>Réparer (SAV payant)</li></ul></div>
@@ -98,7 +113,7 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
   <div class="c re"><h3>Relations clients</h3><ul><li>Conseil en face à face</li><li>Relation ponctuelle : un achat, puis le SAV</li></ul></div>
   <div class="c ca"><h3>Canaux</h3><ul><li>6 boutiques à Lyon et alentours</li><li>Bouche-à-oreille, site vitrine, réseaux sociaux</li></ul></div>
   <div class="c se"><h3>Segments clients</h3><ul><li>Particuliers lyonnais qui veulent un vélo électrique</li><li>Sensibles au prix et à l'écologie</li><li>Capables de payer le vélo en une fois</li></ul></div>
-  <div class="c co"><h3>Structure de coûts</h3><ul><li>Coût dominant : achat + reconditionnement (600 € de coût de revient par vélo)</li><li>Loyers des boutiques, 45 salaires, stock immobilisé (risque d'invendus)</li></ul></div>
+  <div class="c co"><h3>Structure de coûts</h3><ul><li>Coût dominant : achat + reconditionnement (600 € de coût de revient par vélo)</li><li>Loyers des boutiques, 45 salaires, stock immobilisé (risque d'invendus)</li></ul></div>
   <div class="c rv"><h3>Flux de revenus</h3><ul><li>Vente du vélo : encaissée en une fois, à l'achat</li><li>Accessoires, réparations, extensions de garantie</li><li>Indicateur clé : marge par vélo vendu</li></ul></div>
 </div>
 
@@ -108,12 +123,12 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
   <div class="c pa chg"><h3>Partenaires clés <span class="tag">CHANGE</span></h3><ul><li>Assureur (vol inclus dans l'offre)</li><li>Agence web (option A) ou éditeur SaaS (option B)</li><li>Prestataire de paiement récurrent</li><li>Google Ads, Meta : acquisition payante</li><li>Fournisseurs de vélos (inchangé)</li></ul></div>
   <div class="c ac chg"><h3>Activités clés <span class="tag">CHANGE</span></h3><ul><li>Gérer une flotte : livrer, récupérer, réattribuer</li><li>Acquérir en ligne, puis retenir (churn)</li><li>Entretien inclus, gestion des vols</li></ul></div>
   <div class="c rs chg"><h3>Ressources clés <span class="tag">CHANGE</span></h3><ul><li>Flotte détenue par Vélora</li><li>Plateforme d'abonnement en ligne</li><li>Équipe : chef de projet, marketing, 2 techniciens</li><li>Boutiques = points de retrait</li></ul></div>
-  <div class="c pv chg"><h3>Proposition de valeur <span class="tag">CHANGE</span></h3><ul><li>Un vélo électrique sans l'acheter</li><li>49 € HT par mois tout compris : vélo, entretien, assurance vol</li><li>Pas de grosse dépense au départ</li><li>Résiliable</li></ul></div>
-  <div class="c re chg"><h3>Relations clients <span class="tag">CHANGE</span></h3><ul><li>Relation continue, mois après mois</li><li>Espace client en ligne</li><li>Enjeu : garder l'abonné (churn 4 %)</li></ul></div>
-  <div class="c ca chg"><h3>Canaux <span class="tag">CHANGE</span></h3><ul><li>Vente 100 % en ligne</li><li>Pub payante : CPC 1,10 €, conversion 1,2 %</li><li>Boutiques : remise et entretien</li></ul></div>
+  <div class="c pv chg"><h3>Proposition de valeur <span class="tag">CHANGE</span></h3><ul><li>Un vélo électrique sans l'acheter</li><li>49 € HT par mois tout compris : vélo, entretien, assurance vol</li><li>Pas de grosse dépense au départ</li><li>Résiliable</li></ul></div>
+  <div class="c re chg"><h3>Relations clients <span class="tag">CHANGE</span></h3><ul><li>Relation continue, mois après mois</li><li>Espace client en ligne</li><li>Enjeu : garder l'abonné (churn 4 %)</li></ul></div>
+  <div class="c ca chg"><h3>Canaux <span class="tag">CHANGE</span></h3><ul><li>Vente 100 % en ligne</li><li>Pub payante : CPC 1,10 €, conversion 1,2 %</li><li>Boutiques : remise et entretien</li></ul></div>
   <div class="c se"><h3>Segments clients <span class="tag p">PARTIEL</span></h3><ul><li>Actifs urbains qui ne veulent pas immobiliser l'argent d'un achat</li><li>Ceux qui veulent tester avant d'acheter</li><li>Clientèle plus digitale que celle des boutiques</li></ul></div>
-  <div class="c co chg"><h3>Structure de coûts <span class="tag">CHANGE</span></h3><ul><li>Flotte achetée au départ (600 € par vélo, amortie sur 36 mois), acquisition (CAC ≈ 92 €)</li><li>Entretien + assurance : 9 € par abonné et par mois · plateforme · équipe projet · vols et casse</li></ul></div>
-  <div class="c rv chg"><h3>Flux de revenus <span class="tag">CHANGE</span></h3><ul><li>Revenu récurrent : 49 € HT par mois tant que l'abonné reste</li><li>Objectif : 1 200 abonnés au mois 18, soit 58 800 € HT par mois</li><li>Indicateurs : churn, revenu mensuel récurrent, valeur vie client</li></ul></div>
+  <div class="c co chg"><h3>Structure de coûts <span class="tag">CHANGE</span></h3><ul><li>Flotte achetée au départ (600 € par vélo, amortie sur 36 mois), acquisition (CAC ≈ 92 €)</li><li>Entretien + assurance : 9 € par abonné et par mois · plateforme · équipe projet · vols et casse</li></ul></div>
+  <div class="c rv chg"><h3>Flux de revenus <span class="tag">CHANGE</span></h3><ul><li>Revenu récurrent : 49 € HT par mois tant que l'abonné reste</li><li>Objectif : 1 200 abonnés au mois 18, soit 58 800 € HT par mois</li><li>Indicateurs : churn, revenu mensuel récurrent, valeur vie client</li></ul></div>
 </div>
 <p class="legend">Violet = case qui change fortement · PARTIEL = segment élargi, pas remplacé.</p>
 
@@ -121,22 +136,22 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
 <div class="tw"><table>
   <thead><tr><th>Case qui change</th><th>Conséquence budgétaire</th><th>Nature de la ligne</th><th>Ordre de grandeur</th></tr></thead>
   <tbody>
-    <tr><td>Ressources : la flotte</td><td>Les vélos ne sont plus vendus mais gardés : on les paie avant d'encaisser</td><td>CAPEX · variable (par vélo)</td><td>1 200 × 600 € = 720 k€, 65 % de l'enveloppe</td></tr>
-    <tr><td>Flux de revenus</td><td>Revenu étalé : creux de trésorerie au démarrage</td><td>Recette récurrente</td><td>1 200 × 49 € = 58 800 € HT par mois au mois 18</td></tr>
-    <tr><td>Canaux : vente en ligne</td><td>Nouvelle ligne média : on paie pour chaque abonné</td><td>OPEX · variable</td><td>CAC = 1,10 € ÷ 1,2 % ≈ 92 € par abonné</td></tr>
-    <tr><td>Ressources : plateforme</td><td>Choix sur mesure ou SaaS</td><td>A : CAPEX fixe · B : OPEX semi-variable</td><td>A : 78 k€ · B : 1 500 € par mois + 2 % du CA</td></tr>
-    <tr><td>Activités : entretien, assurance</td><td>Ce qui était un revenu (SAV) devient un coût inclus</td><td>OPEX · variable</td><td>9 € par abonné et par mois</td></tr>
-    <tr><td>Ressources : équipe projet</td><td>Nouveaux salaires chargés (coefficient 1,45)</td><td>OPEX · fixe, par paliers</td><td>≈ 16 200 € par mois de coûts fixes, maintenance comprise</td></tr>
-    <tr><td>Relations : rétention</td><td>Le churn devient le premier risque, avec les vols</td><td>Provision pour risques</td><td>Durée de vie : 1 ÷ 4 % = 25 mois</td></tr>
+    <tr><td>Ressources : la flotte</td><td>Les vélos ne sont plus vendus mais gardés : on les paie avant d'encaisser</td><td>CAPEX · variable (par vélo)</td><td>1 200 × 600 € = 720 k€, 65 % de l'enveloppe</td></tr>
+    <tr><td>Flux de revenus</td><td>Revenu étalé : creux de trésorerie au démarrage</td><td>Recette récurrente</td><td>1 200 × 49 € = 58 800 € HT par mois au mois 18</td></tr>
+    <tr><td>Canaux : vente en ligne</td><td>Nouvelle ligne média : on paie pour chaque abonné</td><td>OPEX · variable</td><td>CAC = 1,10 € ÷ 1,2 % ≈ 92 € par abonné</td></tr>
+    <tr><td>Ressources : plateforme</td><td>Choix sur mesure ou SaaS</td><td>A : CAPEX fixe · B : OPEX semi-variable</td><td>A : 78 k€ · B : 1 500 € par mois + 2 % du CA</td></tr>
+    <tr><td>Activités : entretien, assurance</td><td>Ce qui était un revenu (SAV) devient un coût inclus</td><td>OPEX · variable</td><td>9 € par abonné et par mois</td></tr>
+    <tr><td>Ressources : équipe projet</td><td>Nouveaux salaires chargés (coefficient 1,45)</td><td>OPEX · fixe, par paliers</td><td>≈ 16 200 € par mois de coûts fixes, maintenance comprise</td></tr>
+    <tr><td>Relations : rétention</td><td>Le churn devient le premier risque, avec les vols</td><td>Provision pour risques</td><td>Durée de vie : 1 ÷ 4 % = 25 mois</td></tr>
   </tbody>
 </table></div>
-<p class="note">Point mort : 405 abonnés sans compter le vélo, 694 en comptant son amortissement (16,67 € par mois).</p>
+<p class="note">Point mort : 405 abonnés sans compter le vélo, 694 en comptant son amortissement (16,67 € par mois).</p>
 
 <h2>Une vente devient <em>un investissement</em></h2>
 <div class="stats">
-  <div class="stat"><b>720 k€</b>pour la flotte de 1 200 vélos, payée avant d'être rentabilisée</div>
-  <div class="stat"><b>≈ 4 mois</b>pour rembourser le CAC de 92 € : 49 € − 9 € − 16,67 € d'amortissement = 23,33 € de marge par mois</div>
-  <div class="stat"><b>25 mois</b>de durée de vie moyenne d'un abonné à 4 % de churn ; à 6 %, elle tombe à 16,7 mois</div>
+  <div class="stat"><b>720 k€</b>pour la flotte de 1 200 vélos, payée avant d'être rentabilisée</div>
+  <div class="stat"><b>≈ 4 mois</b>pour rembourser le CAC de 92 € : 49 € − 9 € − 16,67 € d'amortissement = 23,33 € de marge par mois</div>
+  <div class="stat"><b>25 mois</b>de durée de vie moyenne d'un abonné à 4 % de churn ; à 6 %, elle tombe à 16,7 mois</div>
 </div>
 <p class="concl">En boutique, Vélora gagne de l'argent à chaque vente. Avec Flex, elle avance l'argent du vélo et le récupère abonné par abonné : le budget se pilote au churn et au coût d'acquisition.</p>
 
@@ -150,7 +165,7 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
   <thead><tr><th>#</th><th>Dépense</th><th>Verdict</th><th>Justification</th></tr></thead>
   <tbody>
     <tr><td>1</td><td>Licence SaaS d'un CRM</td><td><span class="v opex">OPEX</span></td><td>On paie un droit d'usage mensuel : Vélora ne possède ni ne contrôle le logiciel, rien ne reste à l'actif.</td></tr>
-    <tr><td>2</td><td>Achat de la flotte de vélos</td><td><span class="v capex">CAPEX</span></td><td>Actif durable utilisé 3 ans : 600 € par vélo, amortis à 16,67 € par mois. En location, ce serait de l'OPEX.</td></tr>
+    <tr><td>2</td><td>Achat de la flotte de vélos</td><td><span class="v capex">CAPEX</span></td><td>Actif durable utilisé 3 ans : 600 € par vélo, amortis à 16,67 € par mois. En location, ce serait de l'OPEX.</td></tr>
     <tr><td>3</td><td>Campagne Google Ads</td><td><span class="v opex">OPEX</span></td><td>Achat d'espace consommé pendant la campagne, sans actif durable.</td></tr>
     <tr><td>4</td><td>Formation des équipes</td><td><span class="v opex">OPEX</span></td><td>Le savoir-faire appartient aux salariés, pas à l'entreprise : une formation n'est jamais incorporée au coût d'un actif.</td></tr>
     <tr><td>5</td><td>Développement sur mesure du site</td><td><span class="v cond">CAPEX sous conditions</span></td><td>Immobilisable en phase de développement si le projet est faisable, que Vélora a l'intention et les moyens de l'achever, et qu'il générera des avantages futurs (PCG 212-3). La phase de conception amont reste en OPEX.</td></tr>
@@ -158,7 +173,7 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
     <tr><td>7</td><td>Serveur acheté</td><td><span class="v capex">CAPEX</span></td><td>Matériel possédé, utilisé plusieurs années et amorti.</td></tr>
     <tr><td>8</td><td>Hébergement cloud</td><td><span class="v opex">OPEX</span></td><td>Service consommé au mois, facturé à l'usage : on loue de la capacité, on ne l'achète pas.</td></tr>
     <tr><td>9</td><td>Abonnement à un outil d'emailing</td><td><span class="v opex">OPEX</span></td><td>Même logique que le CRM : un abonnement est une consommation de la période.</td></tr>
-    <tr><td>10</td><td>Ordinateurs de l'équipe</td><td><span class="v capex">CAPEX</span></td><td>Matériel durable amorti sur environ 3 ans. Nuance : sous 500 € HT par unité, la tolérance fiscale permet de le passer en charge.</td></tr>
+    <tr><td>10</td><td>Ordinateurs de l'équipe</td><td><span class="v capex">CAPEX</span></td><td>Matériel durable amorti sur environ 3 ans. Nuance : sous 500 € HT par unité, la tolérance fiscale permet de le passer en charge.</td></tr>
     <tr><td>11</td><td>Honoraires d'une agence créative</td><td><span class="v opex">OPEX</span></td><td>Prestation de communication consommée (campagnes, visuels). Seule exception : si l'agence développe le site immobilisé, ses honoraires suivent le CAPEX.</td></tr>
     <tr><td>12</td><td>Maintenance annuelle de la plateforme</td><td><span class="v opex">OPEX</span></td><td>Elle maintient la plateforme en état sans l'améliorer : charge de la période. Une évolution majeure qui ajoute des fonctions serait du CAPEX.</td></tr>
     <tr><td>13</td><td>Aménagement d'un atelier</td><td><span class="v capex">CAPEX</span></td><td>Agencement durable qui sert plusieurs années : immobilisé et amorti sur sa durée d'usage, au plus sur la durée du bail.</td></tr>
@@ -181,6 +196,60 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
   </ul>
 </div>
 <p class="concl">Pour le budget Vélora Flex : choisir l'option B (SaaS) ou louer la flotte fait basculer de gros montants du CAPEX vers l'OPEX. On paie moins au départ, mais plus chaque mois.</p>
+
+<p class="exk" id="ex3">Exercice 3 · Trois calculs sur Vélora</p>
+<h2>TJM, coût journalier <em>et payback</em></h2>
+<div class="calc">
+  <div class="card">
+    <p class="n">Calcul 1</p>
+    <h3>Coût journalier interne</h3>
+    <p class="q">Le chef de projet : 48 k€ brut, coefficient 1,45, 215 jours travaillés. À comparer au TJM de l'agence, 650 €.</p>
+    <ul class="steps">
+      <li>Coût chargé : 48 000 € × 1,45 = <b>69 600 € par an</b></li>
+      <li>Coût par jour : 69 600 € ÷ 215 = <b>323,72 €</b></li>
+      <li>Agence : 650 € ÷ 324 € = <b>2 fois plus cher</b></li>
+    </ul>
+    <div class="res"><b>≈ 324 €</b>par jour, contre 650 € pour l'agence</div>
+    <p class="so">L'agence n'est pas « deux fois trop chère » : son TJM paie aussi ses jours non facturés, ses locaux, ses commerciaux et sa marge. Le vrai choix : un interne pour un besoin durable, l'agence pour un pic de charge ou une compétence absente.</p>
+  </div>
+  <div class="card">
+    <p class="n">Calcul 2</p>
+    <h3>TJM d'un freelance</h3>
+    <p class="q">Il vise 85 000 € de chiffre d'affaires par an et facture 140 jours.</p>
+    <ul class="steps">
+      <li>TJM = chiffre d'affaires visé ÷ jours facturés</li>
+      <li>85 000 € ÷ 140 = <b>607,14 €</b></li>
+      <li>Arrondi commercial : <b>610 €</b></li>
+    </ul>
+    <div class="res"><b>≈ 610 €</b>par jour, hors taxes</div>
+    <p class="so">Il travaille autant qu'un salarié, mais ne facture que 140 jours : le reste part en prospection, gestion et congés. Et sur ses 85 000 €, il paie encore ses cotisations, ses outils et son assurance.</p>
+  </div>
+  <div class="card">
+    <p class="n">Calcul 3</p>
+    <h3>Payback de la plateforme</h3>
+    <p class="q">Option A sur mesure, 15 % de maintenance par an. Option B SaaS, à 1 200 abonnés.</p>
+    <ul class="steps">
+      <li>A, construction : 120 j × 650 € = <b>78 000 €</b></li>
+      <li>A, maintenance : 78 000 € × 15 % ÷ 12 = <b>975 € par mois</b></li>
+      <li>B : 1 500 € + 2 % × (1 200 × 49 €) = <b>2 676 € par mois</b></li>
+      <li>Économie de A : 2 676 € − 975 € = <b>1 701 € par mois</b></li>
+      <li>Payback : 78 000 € ÷ 1 701 € = <b>45,9 mois</b></li>
+    </ul>
+    <div class="res"><b>46 mois</b>pour rentabiliser le sur mesure</div>
+    <p class="so">C'est un minimum : avant d'atteindre 1 200 abonnés, le SaaS coûte encore moins cher et l'économie est plus faible.</p>
+  </div>
+</div>
+<div class="tw"><table class="cmp">
+  <thead><tr><th>Pour décider</th><th>Option A · sur mesure</th><th>Option B · SaaS</th><th>Verdict</th></tr></thead>
+  <tbody>
+    <tr><td>Payback vs horizon du projet</td><td>46 mois</td><td>Rien à rentabiliser</td><td>46 mois > 18 mois du projet</td></tr>
+    <tr><td>TCO sur 3 ans</td><td>78 000 € + 36 × 975 € = 113 100 €</td><td>36 × 2 676 € = 96 336 €</td><td>B moins cher de 16 764 €</td></tr>
+    <tr><td>Trésorerie au lancement</td><td>78 000 € à payer avant le mois 4</td><td>1 500 € par mois au démarrage</td><td>B préserve l'enveloppe</td></tr>
+    <tr><td>Seuil où A devient rentable sur 3 ans</td><td colspan="2">1 500 € + 0,98 € × N = 78 000 € ÷ 36 + 975 €, soit N ≈ 1 675 abonnés</td><td>Au-delà de 1 675 abonnés</td></tr>
+  </tbody>
+</table></div>
+<p class="concl">Recommandation : lancer Vélora Flex sur le SaaS (option B). Le sur mesure ne devient intéressant qu'au-delà d'environ 1 675 abonnés sur 3 ans. On le rouvrira si la croissance dépasse le plan.</p>
+<p class="legend">Hypothèses : 2 % calculés sur le chiffre d'affaires HT (49 € par abonné, soit 0,98 € par abonné et par mois), sans actualisation. Coûts de sortie non chiffrés. Avec l'estimation à trois points du cours (125 jours, 81 250 €), le payback passe à 49 mois (maintenance recalculée sur 81 250 €).</p>
 
 <footer>Business models et budgétisation · M2 · ESD Paris · cas fictif Vélora Flex, tous les chiffres sont des hypothèses pédagogiques du cours.</footer>
 </main>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bloc 1 Vélora : BMC, CAPEX / OPEX, TJM, payback et budget 18 mois | Business models et budgétisation</title>
-<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, ce que le changement de modèle change pour le budget, le tri CAPEX ou OPEX de 15 dépenses, coût journalier, TJM et payback de la plateforme, puis le budget Vélora Flex mensualisé sur 18 mois à télécharger.">
+<title>Bloc 1 Vélora : BMC, CAPEX / OPEX, budget 18 mois, IA et DAF | Business models et budgétisation</title>
+<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, ce que le changement de modèle change pour le budget, le tri CAPEX ou OPEX de 15 dépenses, coût journalier, TJM et payback de la plateforme, le budget Vélora Flex sur 18 mois, puis son challenge par l'IA (prompts CO-STAR, journal des écarts) et les réponses au DAF.">
 <meta name="robots" content="noindex">
 <style>
 :root{--dark:#2A2921;--bg:#F3F2EC;--cell:#E6E4DC;--white:#FDFDFB;--purple:#9B2FC0;--purple-l:#EEDCF5;--grey:#5A5A4C;--line:#D9D8CF;--green:#4ED585}
@@ -83,9 +83,24 @@ table.tri td:nth-child(2){font-weight:700;white-space:nowrap}
 .choices{background:var(--white);border:1px solid var(--line);padding:16px 20px;margin:0 0 16px}
 .choices ul{margin:0;padding-left:18px}.choices li{margin-bottom:4px}
 .atel{grid-template-columns:repeat(4,1fr)}
+.prompt{background:var(--dark);color:#EDEBE4;padding:16px 18px;font-size:.88rem;line-height:1.55;margin:0 0 16px;border-radius:2px}
+.prompt p{margin:0 0 6px}.prompt b{color:#C98BE0}
+.prompt .pt{color:var(--green);font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+h3.sub{font-size:1.15rem;margin:28px 0 10px}
+.ok{color:#1F8A4C;font-weight:700}.ko{color:var(--grey);font-weight:700}
+table.jr td:first-child{width:auto}
+.daf{display:grid;gap:16px}
+.daf .card h3{font-size:1.05rem}
+.daf dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;font-size:.92rem}
+.daf dt{font-weight:700;color:var(--purple)}.daf dd{margin:0}
 footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
 @media (max-width:760px){
   .rule,.count,.calc,.atel{grid-template-columns:1fr}
+  table.jr{min-width:0;background:none}
+  table.jr thead{display:none}
+  table.jr tr{display:block;background:var(--white);border:1px solid var(--line);padding:12px;margin-bottom:8px}
+  table.jr td{display:block;border:0;padding:2px 0}
+  .daf dl{grid-template-columns:1fr}
   table.cmp{font-size:.78rem}
   table.cmp td,table.cmp th{padding:6px}
   table.tri{min-width:0;background:none}
@@ -101,10 +116,10 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
 </head>
 <body>
 <header class="hero"><div class="in">
-  <p class="kicker">Bloc 1 et 2 · Exercices et atelier</p>
+  <p class="kicker">Séances 1 à 3 · Exercices, atelier et IA</p>
   <h1>Vélora Flex <span>même vélo, deux budgets</span></h1>
   <p>Vente en boutique → abonnement à 49 € HT par mois</p>
-  <nav class="toc"><a href="#ex1">Exercice 1 · Deux BMC</a><a href="#ex2">Exercice 2 · CAPEX ou OPEX</a><a href="#ex3">Exercice 3 · TJM et payback</a><a href="#atelier">Atelier · Budget sur 18 mois</a></nav>
+  <nav class="toc"><a href="#ex1">Exercice 1 · Deux BMC</a><a href="#ex2">Exercice 2 · CAPEX ou OPEX</a><a href="#ex3">Exercice 3 · TJM et payback</a><a href="#atelier">Atelier · Budget sur 18 mois</a><a href="#ia">Séance 3 · IA et DAF</a></nav>
 </div></header>
 
 <main>
@@ -264,6 +279,107 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
 </div>
 <p class="concl">Revenus cumulés : 515 k€. Le solde de − 536 k€ à 18 mois correspond à l'investissement de lancement financé par l'enveloppe.</p>
 <a class="dl" href="Velora_Flex_budget_groupe.xlsx" download>Télécharger le budget complété <small>Excel · 40 Ko</small></a>
+
+<p class="exk" id="ia">Séance 3 · Finalisation avec l'IA</p>
+<h2>Challenger le budget <em>avec l'IA</em></h2>
+<p class="lead">Rendu de la slide 60, étapes 4 et 5, et tableau des difficultés de la slide 55. Le budget de référence est la version avec saisonnalité : 1 049 k€ de coûts, 518 k€ de revenus, 1 200 abonnés au mois 18.</p>
+
+<h3 class="sub">Partie 5 · Nos difficultés</h3>
+<div class="tw"><table class="jr">
+  <thead><tr><th>Difficulté</th><th>Où, dans le rendu</th><th>Résolue ?</th><th>Ce qu'il reste à demander</th></tr></thead>
+  <tbody>
+    <tr><td>Combien de nouveaux abonnés par mois pour finir à 1 200 avec 4 % de churn</td><td>Partie 4, Hypothèses</td><td>Oui : objectif ÷ somme des coefficients saisonniers = 98 sur un mois moyen</td><td>—</td></tr>
+    <tr><td>La première version du tableur, faite avec l'IA, ignorait la saisonnalité</td><td>Partie 4, Hypothèses et Budget</td><td>Oui : un coefficient d'acquisition et un de churn pour chaque mois</td><td>Le CPC est laissé constant : est-il plus cher en saison ?</td></tr>
+    <tr><td>Le chiffrage naïf de la flotte fait dépasser l'enveloppe</td><td>Partie 4, Flotte</td><td>Contournée : 600 vélos achetés, le reste loué</td><td>Le loyer de 25 € par vélo est-il réaliste ?</td></tr>
+    <tr><td>Que mettre dans le point mort (405 ou 694 abonnés)</td><td>Partie 4, Synthèse</td><td>En partie</td><td>Quels coûts fixes et quelle marge prendre exactement ?</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="sub">Approche A · On est partis du brief dès le départ</h3>
+<div class="choices"><ul>
+  <li><b>Notre démarche :</b> dès le début, on a travaillé avec l'IA à partir du brief seul. Plusieurs membres du groupe ont construit chacun leur version du tableur avec une IA, puis on a comparé les résultats : ils étaient similaires.</li>
+  <li><b>Ce que la comparaison a corrigé :</b> la première version complétée par un camarade ne tenait pas compte de la saisonnalité. Elle recrutait 105 abonnés chaque mois, alors qu'on vend surtout des vélos au printemps et à la rentrée. On a ajouté des coefficients mensuels : de 0,6 en janvier à 1,5 en septembre pour l'acquisition, et un churn plus fort en hiver et en été.</li>
+  <li><b>Effet sur le budget :</b> 140 k€ dépensés dès le mois 4, et 73 % des vélos achetés entre avril et juin. La trésorerie doit être prête avant la saison.</li>
+  <li><b>Contre-épreuve :</b> le brief seul, relancé dans une conversation neuve, donne 1 312 k€, soit 212 k€ au-dessus de l'enveloppe. L'IA achète toute la flotte (793 k€), invente une commission sur le chiffre d'affaires TTC et oublie la provision, les frais de paiement, les outils, les contenus et la saisonnalité. Sans arbitrage humain, un budget fait par l'IA seule dépasse l'enveloppe.</li>
+</ul></div>
+
+<h3 class="sub">Deux prompts construits avec le cadre CO-STAR</h3>
+<div class="prompt">
+  <p class="pt">Prompt 1 · Approche A, le brief seul</p>
+  <p><b>C ·</b> Nous sommes Vélora, PME lyonnaise fictive de vélos électriques reconditionnés (6 boutiques, 45 salariés, 7 M€ de CA). Nous lançons Vélora Flex, un abonnement en ligne à 49 € HT par mois, avec vélo, entretien et assurance vol. Horizon 18 mois, lancement au mois 4, objectif 1 200 abonnés, enveloppe 1,1 M€ flotte comprise. Données : churn 4 %, vélo 600 € sur 3 ans, entretien et assurance 9 € par abonné et par mois, plateforme A (120 jours × 650 €) ou B (1 500 € par mois + 2 % du CA), équipe (chef de projet 48 k€, marketing mi-temps 44 k€, 2 techniciens à 28 k€ au mois 6), charges × 1,45, CPC 1,10 €, conversion 1,2 %.</p>
+  <p><b>O ·</b> Construis le budget complet sur 18 mois : hypothèses, postes par compartiment, revenus, total et écart avec l'enveloppe.</p>
+  <p><b>S ·</b> Un tableau par compartiment (poste, formule, fixe ou variable, CAPEX ou OPEX, total), puis une synthèse.</p>
+  <p><b>T ·</b> Rigoureux et neutre, comme un contrôleur de gestion.</p>
+  <p><b>A ·</b> Des étudiants de M2 qui défendront ce budget devant un DAF.</p>
+  <p><b>R ·</b> En français, 70 lignes au plus. Signale chaque hypothèse que tu ajoutes. N'invente aucun prix de marché sans le dire.</p>
+</div>
+<div class="prompt">
+  <p class="pt">Prompt 2 · Approche B, étape 1, notre tableur</p>
+  <p><b>C ·</b> Nous sommes Vélora, PME lyonnaise de vélos reconditionnés. Nous lançons Vélora Flex, abonnement à 49 € HT par mois avec vélo, entretien et assurance. Objectif 1 200 abonnés au mois 18, enveloppe 1,1 M€. Ci-dessous notre budget sur 18 mois et nos hypothèses (export du tableur collé à la suite).</p>
+  <p><b>O ·</b> Tu es contrôleur de gestion senior. Sans réécrire notre modèle, vérifie les compartiments et les étiquettes fixe ou variable, CAPEX ou OPEX ; liste les centres de coûts absents, les hypothèses fragiles et cinq questions qu'un DAF poserait.</p>
+  <p><b>S ·</b> Tableau à trois colonnes : point, pourquoi, ce qu'il te manque pour trancher.</p>
+  <p><b>T ·</b> Critique et direct, sans compliments.</p>
+  <p><b>A ·</b> Une équipe d'étudiants de M2 qui défend ce budget en comité.</p>
+  <p><b>R ·</b> Quinze lignes au plus, en français. Indique ton niveau de confiance sur chaque point. N'invente aucun prix de marché.</p>
+</div>
+<p class="legend">Pourquoi le R est détaillé : sans limite de format, l'IA réécrit tout le modèle au lieu de le critiquer.</p>
+
+<h3 class="sub">Journal des écarts · approche B, étapes 1 à 3</h3>
+<div class="tw"><table class="jr">
+  <thead><tr><th>Remarque de l'IA</th><th>Décision</th><th>Justification du groupe</th><th>Impact</th></tr></thead>
+  <tbody>
+    <tr><td>Le résultat d'exploitation oublie l'amortissement des 600 vélos achetés</td><td class="ok">Acceptée</td><td>Vérifié : 8 030 vélos-mois × 16,67 €</td><td>− 134 k€ sur le résultat, pas sur la trésorerie</td></tr>
+    <tr><td>Le point mort oublie les outils et les contenus (+ 1 750 € de fixes) et les commissions (− 1,72 € de marge)</td><td class="ok">Acceptée</td><td>Recalculé : 18 475 € ÷ 38,29 €</td><td>483 abonnés sans le vélo (au lieu de 418), 855 avec l'amortissement (au lieu de 717)</td></tr>
+    <tr><td>Personne n'assure le service client des 1 200 abonnés</td><td class="ok">Acceptée</td><td>Hypothèse du groupe : un conseiller à mi-temps dès le mois 4 (28 k€ brut × 50 % × 1,45)</td><td>+ 25,4 k€</td></tr>
+    <tr><td>Dire que le point mort ne bouge pas avec un churn à 6 % est faux</td><td class="ok">Acceptée</td><td>Il faut racheter chaque mois les abonnés qui partent : churn × CAC</td><td>Réponse au DAF corrigée</td></tr>
+    <tr><td>Couper l'objectif à 1 000 abonnés fait perdre plus de revenus qu'il n'économise de coûts</td><td class="ok">Acceptée</td><td>Recalculé : − 81,2 k€ de coûts, − 86,3 k€ de revenus</td><td>Solde dégradé de 5,1 k€ : réponse au DAF corrigée</td></tr>
+    <tr><td>Facturer le premier mois au prorata (− 29 k€ de revenus)</td><td class="ko">Rejetée</td><td>L'abonnement est payé à la souscription, à date anniversaire : un mois entamé est dû</td><td>0</td></tr>
+    <tr><td>Assurer aussi les 60 vélos de réserve (+ 8 k€)</td><td class="ko">Rejetée</td><td>Les 9 € sont une donnée du cas, définie par abonné</td><td>0</td></tr>
+    <tr><td>Livraison et logistique absentes</td><td class="ko">Rejetée</td><td>Le vélo est retiré en boutique : les boutiques servent de points de retrait (BMC)</td><td>0</td></tr>
+    <tr><td>La case « premier mois d'exploitation positive » est vide</td><td class="ko">Rejetée</td><td>Faux positif : la formule fonctionne dans Excel, l'IA lisait un export texte incomplet</td><td>0</td></tr>
+    <tr><td>Les taux sont mal libellés (« 0,012 % »)</td><td class="ko">Rejetée</td><td>Faux positif : les cellules sont au format pourcentage dans Excel (1,2 %)</td><td>0</td></tr>
+  </tbody>
+</table></div>
+
+<h3 class="sub">V2 du budget</h3>
+<div class="count">
+  <div class="stat"><b>1 074 k€</b>de coûts, soit 26 k€ sous l'enveloppe (au lieu de 51 k€), service client compris</div>
+  <div class="stat"><b>483 · 855</b>abonnés pour le point mort, sans le vélo puis avec son amortissement</div>
+  <div class="stat"><b>− 10,7 k€</b>de résultat d'exploitation au mois 18 (juin) : négatif tous les mois une fois l'amortissement compté</div>
+</div>
+
+<h3 class="sub">Étape 5 · Les trois questions du DAF</h3>
+<div class="daf">
+  <div class="card">
+    <p class="n">Question 1</p>
+    <h3>« Pourquoi acheter la flotte plutôt que la louer ? »</h3>
+    <dl>
+      <dt>Réponse</dt><dd>On fait les deux : on achète 600 vélos et on loue les 660 restants.</dd>
+      <dt>Chiffres</dt><dd>Sur 3 ans, un vélo acheté coûte 600 €, un vélo loué 900 € (36 mois × 25 €). Acheter est moins cher, mais seulement pour un vélo qui sert 3 ans.</dd>
+      <dt>Logique</dt><dd>Les 600 premiers vélos sont sûrs de servir : on dépasse 600 abonnés dès le mois 9 (septembre). Le reste dépend de la réussite du projet : on le loue pour pouvoir le rendre.</dd>
+      <dt>Contrepartie</dt><dd>360 k€ payés avant d'être rentabilisés, surtout d'avril à juin, et 16 500 € de loyers par mois après le mois 18.</dd>
+    </dl>
+  </div>
+  <div class="card">
+    <p class="n">Question 2</p>
+    <h3>« Le budget est coupé de 15 %. Quelle ligne coupez-vous en premier ? »</h3>
+    <dl>
+      <dt>Réponse</dt><dd>D'abord les économies qui ne font perdre aucun client, ensuite seulement l'objectif.</dd>
+      <dt>Sans perte</dt><dd>2e technicien embauché au mois 10 au lieu du mois 6 (− 13,5 k€), contenus ramenés de 1 500 € à 1 000 € par mois (− 8 k€).</dd>
+      <dt>Pour − 15 %</dt><dd>400 vélos achetés au lieu de 600 (− 62 k€) et objectif ramené à 1 000 abonnés (− 81 k€) : le budget passe de 1 049 k€ à 879 k€ (− 16 %).</dd>
+      <dt>Contrepartie</dt><dd>200 abonnés et 87 k€ de revenus en moins (518 k€ à 431 k€). Le besoin de financement passe de 531 k€ à 448 k€. Réduire l'objectif seul ne sert à rien : − 81 k€ de coûts mais − 86 k€ de revenus.</dd>
+    </dl>
+  </div>
+  <div class="card">
+    <p class="n">Question 3</p>
+    <h3>« Que devient votre point mort si le churn passe à 6 % ? »</h3>
+    <dl>
+      <dt>Réponse</dt><dd>Il monte : chaque abonné perdu doit être remplacé, et ce remplacement coûte en publicité.</dd>
+      <dt>Chiffres</dt><dd>111 nouveaux abonnés sur un mois moyen au lieu de 98. Remplacer les départs coûte 5,50 € par abonné et par mois au lieu de 3,67 € (churn × CAC de 92 €). Un abonné reste 16,7 mois au lieu de 25 : il rapporte un tiers de moins.</dd>
+      <dt>Action</dt><dd>Proposer un engagement de 12 mois et entretenir les vélos de façon préventive, surtout avant l'hiver, quand le churn est le plus fort.</dd>
+    </dl>
+  </div>
+</div>
 
 <footer>Business models et budgétisation · M2 · ESD Paris · cas fictif Vélora Flex, tous les chiffres sont des hypothèses pédagogiques du cours.</footer>
 </main>

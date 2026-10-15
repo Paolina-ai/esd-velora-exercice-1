@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bloc 1 Vélora : BMC, CAPEX / OPEX, TJM et payback | Business models et budgétisation</title>
-<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, ce que le changement de modèle change pour le budget, le tri CAPEX ou OPEX de 15 dépenses, puis coût journalier, TJM et payback de la plateforme.">
+<title>Bloc 1 Vélora : BMC, CAPEX / OPEX, TJM, payback et budget 18 mois | Business models et budgétisation</title>
+<meta name="description" content="Exercice 1 du module Business models et budgétisation (M2, ESD Paris) : BMC de la vente en boutique et de l'abonnement Vélora Flex, ce que le changement de modèle change pour le budget, le tri CAPEX ou OPEX de 15 dépenses, coût journalier, TJM et payback de la plateforme, puis le budget Vélora Flex mensualisé sur 18 mois à télécharger.">
 <meta name="robots" content="noindex">
 <style>
 :root{--dark:#2A2921;--bg:#F3F2EC;--cell:#E6E4DC;--white:#FDFDFB;--purple:#9B2FC0;--purple-l:#EEDCF5;--grey:#5A5A4C;--line:#D9D8CF;--green:#4ED585}
@@ -77,9 +77,15 @@ table.tri td:nth-child(2){font-weight:700;white-space:nowrap}
 .cmp{width:100%;min-width:0;margin:20px 0 0}
 .cmp td:first-child{font-weight:700}
 .cmp td:last-child{color:var(--purple);font-weight:700}
+.dl{display:inline-flex;align-items:center;gap:10px;background:var(--dark);color:var(--white);text-decoration:none;font-weight:700;padding:14px 22px;border-radius:99px;margin-top:20px}
+.dl:hover{background:var(--purple)}
+.dl small{font-weight:400;color:#D9D8CF;white-space:nowrap}
+.choices{background:var(--white);border:1px solid var(--line);padding:16px 20px;margin:0 0 16px}
+.choices ul{margin:0;padding-left:18px}.choices li{margin-bottom:4px}
+.atel{grid-template-columns:repeat(4,1fr)}
 footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
 @media (max-width:760px){
-  .rule,.count,.calc{grid-template-columns:1fr}
+  .rule,.count,.calc,.atel{grid-template-columns:1fr}
   table.cmp{font-size:.78rem}
   table.cmp td,table.cmp th{padding:6px}
   table.tri{min-width:0;background:none}
@@ -95,10 +101,10 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
 </head>
 <body>
 <header class="hero"><div class="in">
-  <p class="kicker">Bloc 1 · Exercices 1, 2 et 3</p>
+  <p class="kicker">Bloc 1 et 2 · Exercices et atelier</p>
   <h1>Vélora Flex <span>même vélo, deux budgets</span></h1>
   <p>Vente en boutique → abonnement à 49 € HT par mois</p>
-  <nav class="toc"><a href="#ex1">Exercice 1 · Deux BMC</a><a href="#ex2">Exercice 2 · CAPEX ou OPEX</a><a href="#ex3">Exercice 3 · TJM et payback</a></nav>
+  <nav class="toc"><a href="#ex1">Exercice 1 · Deux BMC</a><a href="#ex2">Exercice 2 · CAPEX ou OPEX</a><a href="#ex3">Exercice 3 · TJM et payback</a><a href="#atelier">Atelier · Budget sur 18 mois</a></nav>
 </div></header>
 
 <main>
@@ -239,6 +245,25 @@ footer{color:var(--grey);font-size:.8rem;border-top:1px solid var(--line);margin
     <p class="so">Près de 4 ans : bien au-delà des 18 mois du projet. Et c'est un minimum, car avant d'atteindre 1 200 abonnés, le SaaS coûte moins cher et le gain est plus faible.</p>
   </div>
 </div>
+
+<p class="exk" id="atelier">Bloc 2 · Atelier de la slide 26</p>
+<h2>Le budget Vélora Flex <em>sur 18 mois</em></h2>
+<p class="lead">Tableur en trois onglets (Hypothèses, Budget mensualisé, Synthèse), sans aucun chiffre saisi en dur : chaque ligne renvoie à une hypothèse écrite et porte ses étiquettes fixe ou variable, CAPEX ou OPEX.</p>
+<div class="choices">
+  <ul>
+    <li><b>Plateforme :</b> option B, SaaS. Pas de mise de départ, un coût qui suit l'activité.</li>
+    <li><b>Flotte :</b> 600 vélos achetés (360 k€), au-delà les vélos sont loués à 25 € par mois, plus 60 vélos de réserve pour l'atelier, les vols et la casse.</li>
+    <li><b>Acquisition :</b> environ 105 nouveaux abonnés par mois, calculés pour atteindre 1 200 abonnés actifs au mois 18.</li>
+  </ul>
+</div>
+<div class="count atel">
+  <div class="stat"><b>1 051 k€</b>de coûts sur 18 mois, soit 49 k€ sous l'enveloppe de 1,1 M€, provision de 44 k€ comprise</div>
+  <div class="stat"><b>43 %</b>pour la flotte (450 k€), premier poste devant les RH (240 k€) et le média (168 k€)</div>
+  <div class="stat"><b>Mois 17</b>premier mois où l'exploitation est positive, location des vélos comprise</div>
+  <div class="stat"><b>717</b>abonnés pour le point mort avec l'amortissement du vélo (418 sans), dépassé au mois 11</div>
+</div>
+<p class="concl">Revenus cumulés : 515 k€. Le solde de − 536 k€ à 18 mois correspond à l'investissement de lancement financé par l'enveloppe.</p>
+<a class="dl" href="Velora_Flex_budget_groupe.xlsx" download>Télécharger le budget complété <small>Excel · 40 Ko</small></a>
 
 <footer>Business models et budgétisation · M2 · ESD Paris · cas fictif Vélora Flex, tous les chiffres sont des hypothèses pédagogiques du cours.</footer>
 </main>
